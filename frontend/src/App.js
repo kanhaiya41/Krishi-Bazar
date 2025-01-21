@@ -145,7 +145,7 @@ function Contact() {
     try {
       e.preventDefault();
       setLoading(true);
-      const res = await axios.post('http://localhost:8000/contactus', { name, email, mobile, message },
+      const res = await axios.post('https://krishi-bazar-ply9.onrender.com/contactus', { name, email, mobile, message },
         {
           headers: {
             'Content-Type': 'application/json'

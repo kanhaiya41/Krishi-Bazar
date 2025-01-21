@@ -25,7 +25,7 @@ function Checkout({ cartItems, onClearCart }) {
   const sendMail = async () => {
     try {
       setLoading(true);
-      const res = await axios.post('http://localhost:8000/mailus', { name, email, mobile, address, cartItems, total },
+      const res = await axios.post('https://krishi-bazar-ply9.onrender.com/mailus', { name, email, mobile, address, cartItems, total },
         {
           headers: {
             'Content-Type': 'application/json'
