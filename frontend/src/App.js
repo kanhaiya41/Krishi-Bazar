@@ -5,20 +5,44 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Checkout from "./CheckOut";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { } from '@fortawesome/free-brands-svg-icons';
+import { } from '@fortawesome/free-regular-svg-icons';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
+
+  const openNav = () => {
+    document.getElementById("mySidenav").style.width = "200px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
   return (
-    <nav className="navbar">
-      <div className="container">
-        <h1 className="logo">Krishi Bazaar</h1>
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <>
+      <nav className="navbar">
+        <div className="container">
+          <h1 className="logo">Krishi Bazaar</h1>
+          <ul className="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+          </ul>
+          <FontAwesomeIcon icon={faBars} onClick={openNav} className='menuicon' />
+        </div>
+      </nav>
+      <div id="mySidenav" className="sidenav">
+        <div className="closebtn" onClick={closeNav}><FontAwesomeIcon icon={faClose} /></div>
+        <div onClick={closeNav}><a href="#home"  >Home</a></div>
+        <div onClick={closeNav}><a href="#products"  >Products</a></div>
+        <div onClick={closeNav}><a href="#about"  >About</a></div>
+        <div onClick={closeNav}><a href="#contact"  >Contact</a></div>
+      </div >
+    </>
   );
 }
 
