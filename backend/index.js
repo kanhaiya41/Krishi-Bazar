@@ -64,7 +64,7 @@ app.post('/contactus', async (req, res) => {
     try {
         const { name, email, mobile, message } = req.body;
         const mailBody = {
-            to: 'mevadigamers@gmail.com',
+            to: 'abhishekmali9825@gmail.com',
             from: process.env.MYEMAIL,
             subject: 'Someone want to contact you through krishi bazar',
             html: `
